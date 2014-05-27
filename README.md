@@ -1,4 +1,4 @@
-# Passport-Slack
+# passport-slack
 
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
 with [Slack](https://slack.com) using the OAuth 2.0 API.
@@ -29,17 +29,17 @@ accepts these credentials and calls `done` providing a user, as well as
 
 #### Authenticate Requests
 
-Use `passport.authorize()`, specifying the `'Slack'` strategy, to
+Use `passport.authorize()`, specifying the `'slack'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
-    app.get('/auth/Slack',
-      passport.authorize('Slack'));
+    app.get('/auth/slack',
+      passport.authorize('slack'));
 
-    app.get('/auth/Slack/callback', 
-      passport.authorize('Slack', { failureRedirect: '/login' }),
+    app.get('/auth/slack/callback', 
+      passport.authorize('slack', { failureRedirect: '/login' }),
       function(req, res) {
         // Successful authentication, redirect home.
         res.redirect('/');
@@ -53,4 +53,4 @@ application:
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2013 Michael Pearson <[http://github.com/mjpearson](http://github.com/mjpearson)>
+Copyright (c) 2014 [Michael Pearson](http://github.com/mjpearson)
