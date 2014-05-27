@@ -1,0 +1,34 @@
+{
+  "name": "passport-slack",
+  "version": "0.0.1",
+  "description": "Slack OAuth2 strategy for Passport.",
+  "keywords": [
+    "passport",
+    "slack",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mjpearson/passport-slack.git"
+  },
+  "bugs": {
+    "url": "http://github.com/mjpearson/passport-slack/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib/passport-slack",
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "passport-oauth": "~0.1.1"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  }
+}
