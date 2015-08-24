@@ -1,6 +1,6 @@
 {
   "name": "passport-slack",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Slack OAuth2 strategy for Passport.",
   "keywords": [
     "passport",
