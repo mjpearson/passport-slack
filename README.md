@@ -44,6 +44,28 @@ application:
         // Successful authentication, redirect home.
         res.redirect('/');
       });
+      
+#### Scopes
+By default passport-slack strategy will try to retrieve user profile from Slack. This requires `users:read` scope. To avoid getting profile, pass `skipUserProfile` option to strategy:
+```javascript
+passport.use(new SlackStrategy({
+		clientID: settings.clientID,
+		clientSecret: app.settings.clientSecret,
+		callbackURL: app.settings.callbackURL,
+		scope: 'incoming-webhook',
+		skipUserProfile: true
+	}, ()=>{})
+```
+
+Or if you want to get profile:
+```javascript
+passport.use(new SlackStrategy({
+		clientID: settings.clientID,
+		clientSecret: app.settings.clientSecret,
+		callbackURL: app.settings.callbackURL,
+		scope: 'incoming-webhook users:read'
+	}, ()=>{})
+```
 
 ## Thanks
 
