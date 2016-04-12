@@ -29,7 +29,7 @@ accepts these credentials and calls `done` providing a user, as well as
 
 #### Authenticate Requests
 
-Use `passport.authorize()`, specifying the `'slack'` strategy, to
+Use `passport.authorize()` (or `passport.authenticate()` if you want to authenticate with Slack and affect `req.user` and user session), specifying the `'slack'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
