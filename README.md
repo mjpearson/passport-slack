@@ -6,6 +6,10 @@ with [Slack](https://slack.com) using the OAuth 2.0 API.
 Updated to support Sign in with Slack by default.<br>
 [![Sign in with Slack](https://a.slack-edge.com/accd8/img/sign_in_with_slack.png)](https://api.slack.com/docs/sign-in-with-slack#identify_users_and_their_teams)
 
+## Notice
+
+This repository is not getting the love it deserves. If you're interested in taking over maintenance or ownership of this repo and npm, please reach me (Mike Pearson) at github@x0rz.com
+
 ## Install
 ```shell
 $ npm install passport-slack
