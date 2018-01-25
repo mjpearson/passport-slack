@@ -1,6 +1,6 @@
 {
-  "name": "passport-slack",
-  "version": "0.0.7",
+  "name": "@bmc-tweaks/passport-slack",
+  "version": "0.0.7-subid.3",
   "description": "Slack OAuth2 strategy for Passport.",
   "keywords": [
     "passport",
@@ -14,6 +14,9 @@
     "type": "git",
     "url": "git://github.com/mjpearson/passport-slack.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.panama.bmc.com"
+  },
   "bugs": {
     "url": "http://github.com/mjpearson/passport-slack/issues"
   },
@@ -26,7 +29,7 @@
   "main": "./lib/passport-slack",
   "dependencies": {
     "pkginfo": "0.2.x",
-    "passport-oauth": "~0.1.1"
+    "passport-oauth": "~1.0.0"
   },
   "engines": {
     "node": ">= 0.4.0"
