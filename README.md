@@ -8,7 +8,7 @@ Updated to support Sign in with Slack by default.<br>
 
 ## Notice
 
-This repository is not getting the love it deserves. If you're interested in taking over maintenance or ownership of this repo and npm, please reach me (Mike Pearson) at github@x0rz.com
+This repository is not getting the love it deserves. If you're interested in taking over maintenance or ownership of this repo and npm, please ask Slack to care about it.
 
 ## Install
 ```shell
