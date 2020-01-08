@@ -131,7 +131,7 @@ NOTE: `identity.*` scopes are for the ["Sign-in with Slack" OAuth process](https
 passport.use(new SlackStrategy({
 	clientID: CLIENT_ID,
 	clientSecret: CLIENT_SECRET,
-	scope: ['identity.basic', 'channels:read', 'chat:write:user']
+	scope: ['channels:read', 'chat:write:user']
 }, () => { });
 ```
 
