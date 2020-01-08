@@ -125,23 +125,31 @@ app.get('/auth/slack/callback',
 ### Custom Scopes
 By default passport-slack strategy will try to retrieve [all user identity](https://api.slack.com/methods/users.identity) from Slack using the default scopes of `identity.basic`, `identity.email`, `identity.avatar`, and `identity.team`. To override these, set the `scope` parameter to an array of scopes.
 
+NOTE: `identity.*` scopes are for the ["Sign-in with Slack" OAuth process](https://api.slack.com/docs/sign-in-with-slack) and cannot be combined with custom scopes. Their purpose is to facilitate authentication of Slack users in a 3rd party web app. If we want a token with API scopes, such as we do here with custom scopes, we will run through the ["Add Slack" OAuth process](https://api.slack.com/docs/slack-button) which basically installs your Slack app into a workspace with the requested scopes and provides you with API tokens.
+
 ```js
 passport.use(new SlackStrategy({
 	clientID: CLIENT_ID,
 	clientSecret: CLIENT_SECRET,
-	scope: ['identity.basic', 'channels:read', 'chat:write:user']
+	scope: ['channels:read', 'chat:write:user']
 }, () => { });
 ```
 
 ### Ignore Profile Info
 If you just need an access token and not user profile data, you can avoid getting profile info by setting `skipUserProfile` to true.
 ```js
+// IMPORTANT: to gain access to the returned JSON object from slack with parameters
+// like `incoming_webhook`, we need to add an extra `params` argument to our callback
+// function.
 passport.use(new SlackStrategy({
 	clientID: CLIENT_ID,
 	clientSecret: CLIENT_SECRET,
 	scope: ['incoming-webhook'],
 	skipUserProfile: true
-}, () => { });
+}, (accessToken, refreshToken, params, profile, done) => {
+  // `profile` here is empty
+  // `params` contains the returned JSON where incoming_webhook info lives
+});
 ```
 
 ## Thanks
